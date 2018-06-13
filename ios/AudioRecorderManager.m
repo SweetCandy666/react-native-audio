@@ -212,6 +212,7 @@ RCT_EXPORT_METHOD(prepareRecordingAtPath:(NSString *)path sampleRate:(float)samp
 RCT_EXPORT_METHOD(startRecording)
 {
   [self startProgressTimer];
+  [_recordSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
   [_recordSession setActive:YES error:nil];
   [_audioRecorder record];
 }
